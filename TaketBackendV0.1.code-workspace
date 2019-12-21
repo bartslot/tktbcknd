@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/bartslot/Documents/Werk/Cookiebox/playground/material-components-web-codelabs/mdc-103/complete"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "complete"
+	}
+}

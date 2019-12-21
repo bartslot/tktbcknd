@@ -1,0 +1,80 @@
+@import "./common";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+@import "@material/animation/functions";
+@import "@material/animation/variables";
+
+.header {
+  text-align: center;
+  padding: 10% 0 50px;
+}
+.body {
+  background-color: darkslategrey;  
+}
+.noise {
+  opacity: 0.2;
+}
+.username,
+.password {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+  border-color: grey;
+  color: grey;
+}
+#svg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: auto;
+}
+
+.button-container button {
+  margin: 3px;
+}
+.taket-login {
+  background: linear-gradient(208deg, #1F1C1B 0%, #131415 65%);
+}
+
+/* animation */
+
+.username,
+.password {
+  transition: mdc-animation-exit-permanent(/* $name: */ opacity, /* $duration: */ 175ms, /* $delay: */ 150ms);
+  opacity: 1;
+  will-change: opacity;
+
+  &--animating {
+    transition: mdc-animation-enter(/* $name: */ opacity, /* $duration: */ 175ms);
+    opacity: 0;
+  }
+}
+.username--animating,
+.password--animating {
+  animation: single-animation 175ms $mdc-animation-standard-curve-timing-function;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.username,
+.password {
+  animation: mdc-animation-enter(/* $name: */ fade-in, /* $duration: */ 350ms);
+}
